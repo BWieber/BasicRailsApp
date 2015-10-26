@@ -12,8 +12,12 @@ group :production do
 # Use sqlite3 as the database for Active Record
 
 group :development do
-   gem 'sqlite3'
- end
+    gem 'sqlite3'
+  end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
