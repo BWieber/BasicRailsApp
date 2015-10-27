@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
  get 'welcome/about'
 
+ get 'welcome/social'
+
  root to: 'welcome#index'
 
 end
