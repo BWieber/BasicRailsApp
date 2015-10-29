@@ -21,6 +21,10 @@ include RandomData
     )
   end
 
+  #Find a particular post, and if not created, create it!
+  Post.find_or_create_by(title: "Brandon's Title", body: "Brandon's Body")
+
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments create"
