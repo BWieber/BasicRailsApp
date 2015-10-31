@@ -23,4 +23,4 @@ include RandomData
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
-puts "#{Comment.count} comments create"
+puts "#{Comment.count} comments created"
