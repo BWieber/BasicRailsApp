@@ -18,6 +18,7 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+<<<<<<< HEAD
     describe "GET show" do
        it "returns http success" do
          get :show, {id: my_post.id}
@@ -71,6 +72,22 @@ RSpec.describe PostsController, type: :controller do
          expect(response).to redirect_to Post.last
        end
      end
+=======
+  #  describe "GET show" do
+   #    it "returns http success" do
+   #      get :show
+   #      expect(response).to have_http_status(:success)
+   #    end
+   #  end
+
+   # describe "GET new" do
+   #   it "returns http success" do
+   #     get :new
+   #     expect(response).to have_http_status(:success)
+   #   end
+   # end
+
+>>>>>>> afd9ac0994b7c8b26b2306556615f14e011bade1
    #  describe "GET edit" do
    #    it "returns http success" do
    #      get :edit
