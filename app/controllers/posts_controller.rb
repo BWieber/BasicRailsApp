@@ -1,11 +1,9 @@
 class PostsController < ApplicationController
   def index
-
     @posts = Post.all
   end
 
   def show
-
     @post = Post.find(params[:id])
   end
 
@@ -25,8 +23,6 @@ class PostsController < ApplicationController
         flash[:error] = "There was an error saving the post. Please try again."
         render :new
       end
-    end
-
   end
 
   def new
@@ -35,4 +31,5 @@ class PostsController < ApplicationController
 
   def edit
   end
+
 end
