@@ -1,11 +1,16 @@
 module RandomData
 
+#    def random_price
+#      price = rand(1..9999)
+#      p price
+#    end
+
     def random_paragraph
       sentences = []
       rand(4..6).times do
         sentences << random_sentence
       end
-      
+
       sentences.join(" ")
     end
 
@@ -20,8 +25,10 @@ module RandomData
       end
 
       def random_word
-          letters = ('a'..'z').to_a
-          letters.shuffle!
-          letters[0,rand(3..8)].join
-        end
+        letters = ('a'..'z').to_a
+        letters.shuffle!
+        letters[0,rand(3..8)].join
       end
+
+
+end
