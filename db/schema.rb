@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112234503) do
+ActiveRecord::Schema.define(version: 20151113231007) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title"
@@ -65,6 +65,22 @@ ActiveRecord::Schema.define(version: 20151112234503) do
     t.string   "title"
     t.text     "body"
     t.boolean  "resolved"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rateables", force: :cascade do |t|
+    t.integer  "rating_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "rateables", ["rateable_type", "rateable_id"], name: "index_rateables_on_rateable_type_and_rateable_id"
+  add_index "rateables", ["rating_id"], name: "index_rateables_on_rating_id"
+
+  create_table "ratings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
