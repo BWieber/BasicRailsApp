@@ -312,6 +312,14 @@ RSpec.describe PostsController, type: :controller do
         post :create, topic_id: my_topic.id, post: {title: RandomData.random_sentence, body: RandomData.random_paragraph}
         expect(response).to redirect_to [my_topic, Post.last]
       end
+
+        it "upvotes the post after creating it" do
+        post :create, topic_id: my_topic.id, post: {title: RandomData.random_sentence, body: RandomData.random_paragraph, user: my_user }
+        post_vote = 1
+        post.votes.create!(value: 1)
+        expect(post.votes).to eq(1)
+
+        end
     end
 
     describe "GET edit" do
