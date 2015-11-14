@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151113231007) do
 
-  create_table "advertisements", force: :cascade do |t|
-    t.string   "title"
-    t.text     "copy"
-    t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "post_id"
@@ -69,32 +61,22 @@ ActiveRecord::Schema.define(version: 20151113231007) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rateables", force: :cascade do |t|
+  create_table "ratings", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "severities", force: :cascade do |t|
     t.integer  "rating_id"
-    t.integer  "rateable_id"
-    t.string   "rateable_type"
+    t.integer  "severity_id"
+    t.string   "severity_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "rateables", ["rateable_type", "rateable_id"], name: "index_rateables_on_rateable_type_and_rateable_id"
-  add_index "rateables", ["rating_id"], name: "index_rateables_on_rating_id"
-
-  create_table "ratings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sponsored_posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "topic_id"
-  end
-
-  add_index "sponsored_posts", ["topic_id"], name: "index_sponsored_posts_on_topic_id"
+  add_index "severities", ["rating_id"], name: "index_severities_on_rating_id"
+  add_index "severities", ["severity_type", "severity_id"], name: "index_severities_on_severity_type_and_severity_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
