@@ -6,8 +6,8 @@ include RandomData
    let(:post)    { create(:post) }
    let(:user)    { create(:user) }
 
-   let(:label)  { Label.create!(name: 'Label') }
-   let(:label2) { Label.create!(name: 'Label2') }
+   let(:label)   { create(:label) }
+   let(:label2)  { create(:label) }
 
    it { should have_many :labelings }
    it { should have_many :topics }
