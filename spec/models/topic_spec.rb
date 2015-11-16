@@ -5,11 +5,12 @@ RSpec.describe Topic, type: :model do
   let(:topic) { Topic.create!(name: "This is a suitable topic name.", description: RandomData.random_paragraph) }
 
   it { should have_many(:posts) }
+  
   it { should have_many(:labelings) }
   it { should have_many(:labels).through(:labelings) }
 
-  it { should have_many(:severities) }
-  it { should have_many(:ratings).through(:severities) }
+  it { should have_many(:raterings) }
+  it { should have_many(:ratings).through(:raterings) }
 
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }

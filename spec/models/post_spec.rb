@@ -10,7 +10,8 @@ RSpec.describe Post, type: :model do
   it { should have_many(:labelings) }
   it { should have_many(:labels).through(:labelings) }
 
-  it { should have_one(:rating) }
+  it { should have_many(:raterings) }
+  it { should have_many(:ratings).through(:raterings) }
 
   it { should have_many(:comments) }
 
