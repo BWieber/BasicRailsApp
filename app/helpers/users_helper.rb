@@ -1,16 +1,17 @@
 module UsersHelper
 
   def user_has_posts?(user)
-    user.posts == true
+     user.posts.any?
   end
 
   def user_has_comments?(user)
-    user.comments == true
+    user.comments.any?
   end
 
-  def favorite_for(post)
-     favorites.where(post_id: post.id).first
+  def user_has_favorites?(user)
+    user.favorites.any?
   end
 
+  
 
 end

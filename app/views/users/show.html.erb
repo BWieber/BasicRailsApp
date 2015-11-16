@@ -14,7 +14,7 @@
 
         <small>
         <% if user_has_posts?(@user) %>
-          <%= pluralize(@user.posts.count, 'post') %>,
+          <%= @user.name %> has <%= pluralize(@user.posts.count, 'post') %> and
 
         <% else %>
           <%= @user.name %> does not yet have any posts.
@@ -22,7 +22,7 @@
         <br>
 
         <% if user_has_comments?(@user) %>
-          <%= pluralize(@user.comments.count, 'comment') %>
+           has <%= pluralize(@user.comments.count, 'comment') %>
         <% else %>
           <%= @user.name %> does not yet have any comments.
         <% end %>
@@ -43,6 +43,7 @@
   <%= render @user.comments %>
 <% end %>
 
-
+<% if user_has_favorites?(@user) %>
 <h2> Favorite Posts </h2>
-<%= @user.favorites %>
+  <%= render @user.posts %>
+<% end %>
