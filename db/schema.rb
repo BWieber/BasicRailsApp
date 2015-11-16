@@ -72,22 +72,22 @@ ActiveRecord::Schema.define(version: 20151115175727) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "raterings", force: :cascade do |t|
+    t.integer  "rating_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "raterings", ["rateable_type", "rateable_id"], name: "index_raterings_on_rateable_type_and_rateable_id"
+  add_index "raterings", ["rating_id"], name: "index_raterings_on_rating_id"
+
   create_table "ratings", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "severities", force: :cascade do |t|
-    t.integer  "rating_id"
-    t.integer  "severity_id"
-    t.string   "severity_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "severities", ["rating_id"], name: "index_severities_on_rating_id"
-  add_index "severities", ["severity_type", "severity_id"], name: "index_severities_on_severity_type_and_severity_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
