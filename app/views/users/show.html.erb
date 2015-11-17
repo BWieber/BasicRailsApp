@@ -15,7 +15,6 @@
         <small>
         <% if user_has_posts?(@user) %>
           <%= @user.name %> has <%= pluralize(@user.posts.count, 'post') %> and
-
         <% else %>
           <%= @user.name %> does not yet have any posts.
         <% end %>
@@ -45,5 +44,7 @@
 
 <% if user_has_favorites?(@user) %>
 <h2> Favorite Posts </h2>
-  <%= render @user.posts %>
+  <% @user.favorites.each do |favorite| %>
+    <%= render partial: 'posts/post', locals: { post: favorite.post } %>
+  <% end %>
 <% end %>
