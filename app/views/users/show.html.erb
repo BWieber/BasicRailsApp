@@ -44,7 +44,20 @@
 
 <% if user_has_favorites?(@user) %>
 <h2> Favorite Posts </h2>
-  <% @user.favorites.each do |favorite| %>
-    <%= render partial: 'posts/post', locals: { post: favorite.post } %>
-  <% end %>
+<% @user.favorites.each do |favorite| %>
+<div>
+<%= render partial: 'votes/voter', locals: { post: favorite.post } %>
+</div>
+
+<div>
+<%= render partial: 'posts/post', locals: { post: favorite.post } %>
+</div>
+
+<div class="media-right">
+<% avatar_url = User.avatar_url(@user, 64) %>
+<% unless avatar_url.nil? %>
+<%= image_tag avatar_url, class: 'media-object' %>
+<% end %>
+</div>
+<% end %>
 <% end %>
