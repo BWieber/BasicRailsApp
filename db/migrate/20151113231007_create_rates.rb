@@ -1,11 +1,11 @@
-class CreateRaterings < ActiveRecord::Migration
+class CreateRates < ActiveRecord::Migration
   def change
-    create_table :raterings do |t|
+    create_table :rates do |t|
       t.references :rating, index: true
 
       t.references :rateable, polymorphic: true, index: true
       t.timestamps null: false
     end
-    add_foreign_key :raterings, :ratings
+    add_foreign_key :rates, :ratings
   end
 end

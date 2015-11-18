@@ -2,13 +2,14 @@ class Post < ActiveRecord::Base
 
   belongs_to :topic
   belongs_to :user
+
   has_many :comments, dependent: :destroy
+
   has_many :labelings, as: :labelable
   has_many :labels, through: :labelings
 
-  has_many :raterings, as: :rateable
-  has_many :ratings, through: :raterings
-
+  has_many :rates, as: :rateable
+  has_many :ratings, through: :rates
 
   default_scope { order('created_at DESC') }
 
