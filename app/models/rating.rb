@@ -11,6 +11,7 @@ class Rating < ActiveRecord::Base
   enum severity: [:PG, :PG13, :R]
 
   def self.update_rating(integer)
+    Rating.new(severity: "#{integer}")
   end
 
 end
