@@ -1,13 +1,13 @@
 class VotesController < ApplicationController
 
   before_action :require_sign_in
+  respond_to :html, :js
 
   def up_vote
     update_vote(1)
-    
+
     respond_to do |format|
-      format.html
-      format.js
+      format.js { render :action => "update_vote" }
     end
 
   end
@@ -15,6 +15,9 @@ class VotesController < ApplicationController
   def down_vote
     update_vote(-1)
 
+    respond_to do |format|
+      format.js { render :action => "update_vote" }
+    end
   end
 
   private
@@ -29,9 +32,6 @@ class VotesController < ApplicationController
       @vote = current_user.votes.create(value: new_value, post: @post)
     end
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
+
 end
