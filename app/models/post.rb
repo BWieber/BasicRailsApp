@@ -1,6 +1,9 @@
 class Post < ActiveRecord::Base
   belongs_to :topic
   belongs_to :user
+
+  belongs_to :rateable, polymorphic: true
+
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
@@ -9,8 +12,7 @@ class Post < ActiveRecord::Base
   has_many :labelings, as: :labelable
   has_many :labels, through: :labelings
 
-  has_many :rates, as: :rateable
-  has_many :ratings, through: :rates
+  has_one :rating, as: :rateable
 
   default_scope { order('rank DESC') }
 

@@ -4,14 +4,20 @@ class Rating < ActiveRecord::Base
 
   has_many :rates
 
-  has_many :topics, through: :rates, source: :rateable, source_type: :Topic
+  has_many :topics, as: :rateable
 
-  has_many :posts, through: :rates, source: :rateable, source_type: :Post
+  has_many :posts, as: :rateable
 
-  enum severity: [:PG, :PG13, :R]
+  enum severity: { PG: 0, PG13: 1, R: 2 }
 
-  def self.update_rating(integer)
-    Rating.new(severity: "#{integer}")
+  def self.update_rating(rating_string)
+    integer = rating_string.to_i
+    Rating.new(severity: integer)
   end
 
+  private
+
+  def rating_params
+    params.require(:rating).permit(:severity, :integer)
+  end
 end
