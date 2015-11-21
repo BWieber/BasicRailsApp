@@ -60,6 +60,13 @@ include RandomData
   password: 'helloworld'
   )
 
+  #Create Canyon the Malamute
+  member = User.create!(
+  name:     'Canyon',
+  email:    'canyon@gmail.com',
+  password: 'canyon'
+  )
+
 puts "Seed finished"
 puts "#{User.count} users created."
 puts "#{Topic.count} topics created."

@@ -78,6 +78,13 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "#generate_auth_token" do
+    it "creates a token" do
+      expect(user.auth_token).to_not be_nil
+    end
+  end
+
+
   describe "roles" do
 
     it "should be member by default" do
