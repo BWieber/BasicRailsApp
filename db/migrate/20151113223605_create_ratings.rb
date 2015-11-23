@@ -1,8 +1,7 @@
 class CreateRatings < ActiveRecord::Migration
   def change
     create_table :ratings do |t|
-      t.string :name
-
+      t.column :severity, :integer
       t.timestamps null: false
     end
   end
