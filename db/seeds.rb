@@ -3,7 +3,7 @@ include RandomData
 #Create Users
 
   5.times do
-    user = User.create!(
+    User.create!(
       name:     RandomData.random_name,
       email:    RandomData.random_email,
       password: RandomData.random_sentence
@@ -12,10 +12,12 @@ include RandomData
   users = User.all
 # Create topics
   15.times do
-    Topic.create!(
+    t = Topic.create!(
       name:         RandomData.random_sentence,
       description:  RandomData.random_paragraph
     )
+    t.rating.severity = rand(4)
+    t.rating.save!
   end
   topics = Topic.all
 
@@ -23,12 +25,14 @@ include RandomData
 # Create posts
   50.times do
 
-    Post.create!(
+    p = Post.create!(
       user:  users.sample,
       topic: topics.sample,
       title: RandomData.random_sentence,
       body:  RandomData.random_paragraph
     )
+    p.rating.severity = rand(4)
+    p.rating.save!
   end
   posts = Post.all
 

@@ -1,16 +1,11 @@
 class Rating < ActiveRecord::Base
 
-  has_many :rates
+  belongs_to :rateable, polymorphic: true
 
-  has_many :topics, through: :rates, source: :rateable, source_type: :Topic
-
-  has_many :posts, through: :rates, source: :rateable, source_type: :Post
-
-  enum severity: [ :PG, :PG13, :R]
+  enum severity: [ :PG, :PG13, :R, :XXX ]
 
   def self.update_rating(rating_string)
     return false if rating_string.blank?
-    
   end
 
 end

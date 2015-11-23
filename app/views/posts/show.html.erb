@@ -1,4 +1,4 @@
-<h1><%= @post.title %> <br>
+<h1><%= @post.title %> <%= rating_label(@post) if @post.severity.present? %> <br>
   <small>
     submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
   </small>

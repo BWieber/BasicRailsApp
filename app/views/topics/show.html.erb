@@ -1,4 +1,4 @@
-<h1><%= @topic.name %> <%= render partial: "ratings/form", locals: { rating: @topic.ratings} %> </h1>
+<h1><%= @topic.name %> <%= rating_label(@topic) if @topic.severity.present? %> </h1>
 
 <% if user_is_authorized_for_topics? %>
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
@@ -19,6 +19,7 @@
         <div class="media-body">
           <h4 class="media-heading">
             <%= link_to post.title, topic_post_path(@topic, post) %>
+            <%= rating_label(post) if post.severity.present? %>
             <%= render partial: "labels/list", locals: { labels: post.labels } %>
           </h4>
           <small>

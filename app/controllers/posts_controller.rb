@@ -12,21 +12,26 @@ class PostsController < ApplicationController
   def new
     @topic = Topic.find(params[:topic_id])
     @post = Post.new
+    @post.rating = Rating.new
   end
 
   def create
     @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.build(post_params)
+    @post = Post.new
+    @post.rating = Rating.new
+    @post.topic = @topic
+    @post.assign_attributes post_params
     @post.user = current_user
 
-      if @post.save
-        @post.labels = Label.update_labels(params[:post][:labels])
-        flash[:notice] = "Post was saved."
-        redirect_to [@topic, @post]
-      else
-        flash[:error] = "There was an error saving the post. Please try again."
-        render :new
-      end
+    if @post.save
+      @post.rating.update_attributes severity: post_params[:severity]
+      @post.labels = Label.update_labels(params[:post][:labels])
+      flash[:notice] = "Post was saved."
+      redirect_to [@topic, @post]
+    else
+      flash[:error] = "There was an error saving the post. Please try again."
+      render :new
+    end
   end
 
   def edit
@@ -62,7 +67,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :severity)
   end
 
   def authorize_user
