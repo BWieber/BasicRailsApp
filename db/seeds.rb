@@ -23,12 +23,14 @@ include RandomData
 # Create posts
   50.times do
 
-    Post.create!(
+    p = Post.create!(
       user:  users.sample,
       topic: topics.sample,
       title: RandomData.random_sentence,
       body:  RandomData.random_paragraph
     )
+    p.rating.severity = rand(4)
+    p.save
   end
   posts = Post.all
 

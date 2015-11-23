@@ -5,8 +5,7 @@ class Topic < ActiveRecord::Base
   has_many :labelings, as: :labelable
   has_many :labels, through: :labelings
 
-  has_many :rates, as: :rateable
-  has_many :ratings, through: :rates
+  has_one :rating, as: :rateable
 
 
 end
