@@ -3,7 +3,7 @@ include RandomData
 #Create Users
 
   5.times do
-    user = User.create!(
+    User.create!(
       name:     RandomData.random_name,
       email:    RandomData.random_email,
       password: RandomData.random_sentence
