@@ -13,12 +13,16 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
+    @topic.rating = Rating.new
   end
 
   def create
-    @topic = Topic.new(topic_params)
+    @topic = Topic.new
+    @topic.rating = Rating.new
+    @topic.assign_attributes(topic_params)
 
     if @topic.save
+      @topic.rating.update_attributes severity: topic_params[:severity]
       @topic.labels = Label.update_labels(params[:topic][:labels])
       redirect_to @topic, notice: "Topic was saved successfully."
     else
@@ -59,7 +63,7 @@ class TopicsController < ApplicationController
   end
 
   def topic_params
-    params.require(:topic).permit(:name, :description, :public)
+    params.require(:topic).permit(:name, :description, :public, :severity)
   end
 
   def authorize_user
