@@ -12,10 +12,12 @@ include RandomData
   users = User.all
 # Create topics
   15.times do
-    Topic.create!(
+    t = Topic.create!(
       name:         RandomData.random_sentence,
       description:  RandomData.random_paragraph
     )
+    t.rating.severity = rand(4)
+    t.rating.save!
   end
   topics = Topic.all
 
