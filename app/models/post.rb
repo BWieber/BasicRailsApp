@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   has_many :labels, through: :labelings
 
   has_one :rating, as: :rateable, dependent: :destroy
-  deligate :severity, :severity=, to: :rating
+  delegate :severity, :severity=, to: :rating
 
   default_scope { order('created_at DESC') }
 
@@ -19,11 +19,16 @@ class Post < ActiveRecord::Base
   validates :user, presence: true
 
   after_create :create_rating
+  after_save :save_rating
 
   private #---------------------------------------------------------------------------
 
   def create_rating
     self.rating = Rating.create
+  end
+
+  def save_rating
+    self.rating.save
   end
 
 end

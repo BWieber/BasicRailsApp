@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113231007) do
+ActiveRecord::Schema.define(version: 20151113223605) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -61,22 +61,15 @@ ActiveRecord::Schema.define(version: 20151113231007) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rates", force: :cascade do |t|
-    t.integer  "rating_id"
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "severity"
     t.integer  "rateable_id"
     t.string   "rateable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "rates", ["rateable_type", "rateable_id"], name: "index_rates_on_rateable_type_and_rateable_id"
-  add_index "rates", ["rating_id"], name: "index_rates_on_rating_id"
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "severity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "ratings", ["rateable_type", "rateable_id"], name: "index_ratings_on_rateable_type_and_rateable_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"

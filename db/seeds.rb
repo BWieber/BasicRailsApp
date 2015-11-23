@@ -30,7 +30,7 @@ include RandomData
       body:  RandomData.random_paragraph
     )
     p.rating.severity = rand(4)
-    p.save
+    p.rating.save!
   end
   posts = Post.all
 
