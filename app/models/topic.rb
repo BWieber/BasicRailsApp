@@ -8,6 +8,9 @@ class Topic < ActiveRecord::Base
   has_one :rating, as: :rateable, dependent: :destroy
   delegate :severity, :severity=, to: :rating
 
+  validates :name, length: { minimum: 5 }, presence: true
+  validates :description, length: { minimum: 15 }, presence: true
+
   after_create :create_rating
   after_save :save_rating
 

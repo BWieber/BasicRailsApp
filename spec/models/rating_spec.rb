@@ -8,9 +8,7 @@ RSpec.describe Rating, type: :model do
   let(:post)  { topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, user: user) }
   let(:rating) { Rating.create!(name: 'PG') }
 
-  it { should have_many :raterings }
-  it { should have_many :topics }
-  it { should have_many :posts }
+  it { should belong_to :rateable }
 
   describe "rateable" do
     it "allows the same rating to be associated with a different topic and post" do
