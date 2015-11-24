@@ -60,7 +60,7 @@ RSpec.describe Api::V1::PostsController, type: :controller do
      end
 
    describe "PUT update" do
-     before { put :update, topic_id: my_topic.id, id: my_post.id, topic: {title: @new_post.title, body: @new_post.body} }
+     before { put :update, topic_id: my_topic.id, id: my_post.id, post: {title: @new_post.title, body: @new_post.body} }
 
        it "returns http success" do
          expect(response).to have_http_status(:success)
