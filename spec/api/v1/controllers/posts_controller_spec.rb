@@ -77,7 +77,7 @@ RSpec.describe Api::V1::PostsController, type: :controller do
      end
 
      describe "POST create" do
-       before { post :create, post: {title: @new_post.title, body: @new_post.body} }
+       before { post :create, topic_id: my_topic.id, post: {title: @new_post.title, body: @new_post.body} }
 
        it "returns http success" do
          expect(response).to have_http_status(:success)
