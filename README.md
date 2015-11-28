@@ -1,32 +1,18 @@
-== README
+## Bloccit: A Reddit Replica to Showcase the Fundamentals of Web Development and Ruby on Rails.
 
-## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
+The live version can be found at [bwieber-bloccit.herokuapp.com](bwieber-bloccit.herokuapp.com).
 
- Made with my mentor at [Bloc](http://bloc.io).
+The following fundamentals of Ruby on Rails were utilized in this project:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Object relational mapping
+- The importance of testing
+- Seeding data
+- The MVC architecture
+- CRUD
+- Validating data
+- Creating users & signing them in and out
+- Ajax
+- Privacy options
+- API basics (sending and retrieving data)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Made during my apprenticeship at [Bloc](www.bloc.io)
