@@ -1,6 +1,6 @@
 ## Bloccit: A Reddit Replica to Showcase the Fundamentals of Web Development and Ruby on Rails.
 
-The live version can be found at [bwieber-bloccit.herokuapp.com](bwieber-bloccit.herokuapp.com).
+The live version can be found at (bwieber-bloccit.herokuapp.com).
 
 The following fundamentals of Ruby on Rails were utilized in this project:
 
@@ -15,4 +15,4 @@ The following fundamentals of Ruby on Rails were utilized in this project:
 - Privacy options
 - API basics (sending and retrieving data)
 
-Made during my apprenticeship at [Bloc](www.bloc.io)
+Made during my apprenticeship at Bloc
