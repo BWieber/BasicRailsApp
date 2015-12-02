@@ -15,8 +15,6 @@ Rails.application.routes.draw do
 
   end
 
-
-
   resources :users, only: [:new, :create, :show]
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -27,8 +25,19 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:index, :show, :create, :update]
-      resources :topics, except: [:edit, :new]
+      resources :posts, except: [:edit, :new] do
+        resources :comments, only: [:index, :show]
+      end
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :show, :create, :update]
+      resources :topics, only: [:index, :show] do
+        resources :posts, except: [:edit, :new]
+      end
+    end
+  end
+
 end
