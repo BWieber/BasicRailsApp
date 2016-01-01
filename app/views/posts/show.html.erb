@@ -1,5 +1,6 @@
-<div>
+<div class='update_vote'>
   <%= render partial: 'votes/voter', locals: { post: @post} %>
+</div>
 <h1>
   <%= @post.title %>
   <%= render partial: "labels/list", locals: { labels: @post.labels } %>
@@ -50,4 +51,3 @@
     </div>
 
   </div>
-</div>
