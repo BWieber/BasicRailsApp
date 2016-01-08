@@ -769,7 +769,7 @@ ul.sub-menu {
 *******Home Page******
 **************************/
 #home-slider {
-  background: asset-url(../images/home/slider-bg.png) 0 100% repeat-x;
+  background: url(../images/home/slider-bg.png) 0 100% repeat-x;
   position: relative;
 }
 
@@ -3773,12 +3773,12 @@ div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline
     padding: 12px 11px;
   }
 }
-/* line 5, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/users.scss */
+/* line 5, /Users/brandonwieber/code/bloccit/app/assets/css/users.scss */
 .gravatar {
   margin-bottom: 5px;
   margin-right: 5px;
 }
-/* line 5, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/votes.scss */
+/* line 5, /Users/brandonwieber/code/bloccit/app/assets/css/votes.scss */
 .vote-arrows {
   width: 40px;
   text-align: center;
@@ -3796,6 +3796,13 @@ div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
+
+
+
+
+
+
 
 
  */
@@ -12569,17 +12576,17 @@ button.close {
     display: none !important;
   }
 }
-/* line 21, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
+/* line 28, /Users/brandonwieber/code/bloccit/app/assets/css/application.scss */
 .user-info {
   margin-top: 9px;
 }
 
-/* line 25, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
+/* line 32, /Users/brandonwieber/code/bloccit/app/assets/css/application.scss */
 .nav {
   margin-top: 5px;
 }
 
-/* line 29, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
+/* line 36, /Users/brandonwieber/code/bloccit/app/assets/css/application.scss */
 hr {
   display: block;
   margin-top: 0.5em;
