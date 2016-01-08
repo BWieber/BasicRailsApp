@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116051141) do
+ActiveRecord::Schema.define(version: 20160108010137) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -72,33 +72,13 @@ ActiveRecord::Schema.define(version: 20151116051141) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "raterings", force: :cascade do |t|
-    t.integer  "rating_id"
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "severity"
     t.integer  "rateable_id"
     t.string   "rateable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
-
-  add_index "raterings", ["rateable_type", "rateable_id"], name: "index_raterings_on_rateable_type_and_rateable_id"
-  add_index "raterings", ["rating_id"], name: "index_raterings_on_rating_id"
-
-  create_table "ratings", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "severities", force: :cascade do |t|
-    t.integer  "rating_id"
-    t.integer  "severity_id"
-    t.string   "severity_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "severities", ["rating_id"], name: "index_severities_on_rating_id"
-  add_index "severities", ["severity_type", "severity_id"], name: "index_severities_on_severity_type_and_severity_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
@@ -106,7 +86,10 @@ ActiveRecord::Schema.define(version: 20151116051141) do
     t.text     "description"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "user_id"
   end
+
+  add_index "topics", ["user_id"], name: "index_topics_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -115,6 +98,7 @@ ActiveRecord::Schema.define(version: 20151116051141) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "role"
+    t.string   "auth_token"
   end
 
   create_table "votes", force: :cascade do |t|
