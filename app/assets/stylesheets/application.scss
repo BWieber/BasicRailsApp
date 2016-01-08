@@ -11,7 +11,14 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require animate.min.css
+ *= require bootstrap.min.css
+ *= require font-awesome.min.css
+ *= require lightbox.css
+ *= require responsive.css
+ *= require prettyPhoto.css
  *= require_self
+
  */
 
 @import "bootstrap-sprockets";

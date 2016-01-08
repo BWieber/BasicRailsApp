@@ -14,4 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap.min.js
+//= require gmaps.js
+//= require holder.js
+//= require coundown-timer.js
+//= require html5shiv.js
+//= require jquery.countTo.js
+//= require jquery.fitvids.js
+//= require jquery.isotope.min.js
+//= require lightbox.min.js
+//= require main.js
+//= require masonry.min.js
+//= require respond.min.js
+//= require wow.min.js
 //= require_tree .

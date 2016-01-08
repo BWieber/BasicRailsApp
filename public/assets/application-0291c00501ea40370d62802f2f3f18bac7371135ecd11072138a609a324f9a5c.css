@@ -790,9 +790,7 @@ ul.sub-menu {
   animation: fadeInLeftBig 700ms cubic-bezier(0.190,1.000,0.220,1.000) 200ms both;
 }
 
-#home-slider
-
-.slider-hill {
+#home-slider .slider-hill {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -803,9 +801,7 @@ ul.sub-menu {
   animation: bounceInDown 1000ms ease-in-out 200ms both;
 }
 
-#home-slider
-
-.slider-house {
+#home-slider .slider-house {
   position: absolute;
   right: 110px;
   bottom: -30px;
@@ -3800,6 +3796,13 @@ div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
+
+
+
+
+
+
 
 
  */
@@ -12573,17 +12576,17 @@ button.close {
     display: none !important;
   }
 }
-/* line 21, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
+/* line 28, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
 .user-info {
   margin-top: 9px;
 }
 
-/* line 25, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
+/* line 32, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
 .nav {
   margin-top: 5px;
 }
 
-/* line 29, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
+/* line 36, /Users/brandonwieber/code/bloccit/app/assets/stylesheets/application.scss */
 hr {
   display: block;
   margin-top: 0.5em;
