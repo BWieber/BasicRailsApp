@@ -106,25 +106,15 @@
                 <div class="col-md-3 col-sm-5">
                     <div class="sidebar blog-sidebar">
                         <div class="sidebar-item  recent">
-                            <h2>Posts</h2>
+                            <h2>Posts <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-warning' %> </h2>
+                            <hr>
                             <div class="media">
                                 <div class="media-body">
                                   <% @topic.posts.each do |post| %>
-                                    <h4> <%= link_to post.title, post %> </h4>
+                                    <h4> <%= link_to post.title, topic_post_path(@topic, post) %> </h4>
                                     <p>posted on <%= post.created_at %></p>
+                                    <hr>
                                   <% end %>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-body">
-                                    <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit,</a></h4>
-                                    <p>posted on  07 March 2014</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-body">
-                                    <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit,</a></h4>
-                                    <p>posted on  07 March 2014</p>
                                 </div>
                             </div>
                         </div>
@@ -146,6 +136,10 @@
                                     <h3 class="post-author"> Started by <%= @topic.user.name %></h3>
                                     <p> <%= @topic.description %> <p>
 
+                                    <div class="post-bottom overflow">
+                                      <ul class="nav navbar-nav post-nav">
+                                        <%= render partial: "labels/list", locals: { labels: @topic.labels } %>
+                                      </ul>
                                 </div>
                             </div>
                         </div>
