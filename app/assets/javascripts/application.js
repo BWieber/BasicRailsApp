@@ -31,7 +31,7 @@
 
 var blocmetrics = {};
   blocmetrics.report = function(eventName) {
-    var event = {event: { name: sale}};
+    var event = {event: { name: eventName}};
 
     var request = new XMLHttpRequest();
 
@@ -40,4 +40,5 @@ var blocmetrics = {};
     request.setRequestHeader('Content-Type', 'application/json');
 
     request.send(JSON.stringify(event));
+
  }
