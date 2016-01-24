@@ -14,3 +14,7 @@
     <%= render partial: 'form', locals: { topic: @topic, post: @post } %>
     </div>
   </div>
+
+  <% content_for :analytic do %>
+    <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_posts_new"); }); </script>
+  <% end %>

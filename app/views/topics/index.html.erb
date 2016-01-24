@@ -50,4 +50,6 @@
         </div>
     </section>
 
-    <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_topics_index"); }); </script>
+    <% content_for :analytic do %>
+      <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_topics_index"); }); </script>
+    <% end %>

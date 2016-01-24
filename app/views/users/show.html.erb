@@ -62,4 +62,6 @@
                       </div>
     </section>
 
-    <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_user_show_page"); }); </script>
+    <% content_for :analytic do %>
+      <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_user_show_page"); }); </script>
+    <% end %>
