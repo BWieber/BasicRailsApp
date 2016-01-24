@@ -1,6 +1,4 @@
-<script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_topic_show_page"); }); </script>
-
-    <section id="page-breadcrumb">
+  <section id="page-breadcrumb">
         <div class="vertical-center sun">
              <div class="container">
                 <div class="row">
@@ -62,3 +60,7 @@
             </div>
         </div>
     </section>
+
+    <% content_for :analytic do %>
+      <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_topic_show_page"); }); </script>
+    <% end %>

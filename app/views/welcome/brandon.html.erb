@@ -152,4 +152,6 @@
     <script type="text/javascript" src="/assets/wow.min.js"></script>
     <script type="text/javascript" src="/assets/main.js"></script>
 
-    <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_profile_page"); }); </script>
+    <% content_for :analytic do %>
+      <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_profile_page"); }); </script>
+    <% end %>
