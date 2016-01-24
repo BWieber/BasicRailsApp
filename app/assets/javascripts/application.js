@@ -35,7 +35,7 @@ var blocmetrics = {};
 
     var request = new XMLHttpRequest();
 
-    request.open("POST", "http://localhost:3000/api/events", true);
+    request.open("POST", "https://bwieber-blocmetrics.herokuapp.com/api/events", true);
 
     request.setRequestHeader('Content-Type', 'application/json');
 
