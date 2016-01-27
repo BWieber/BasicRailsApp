@@ -12,20 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.countTo
+//= require jquery.fitvids
+//= require jquery.isotope.min
 //= require turbolinks
-//= require bootstrap
-//= require bootstrap.min.js
-//= require holder.js
-//= require coundown-timer.js
-//= require html5shiv.js
-//= require jquery.countTo.js
-//= require jquery.fitvids.js
-//= require jquery.isotope.min.js
-//= require lightbox.min.js
-//= require main.js
-//= require masonry.min.js
-//= require respond.min.js
-//= require wow.min.js
+//= require bootstrap.min
+//= require holder
+//= require coundown-timer
+//= require html5shiv
+//= require lightbox.min
+//= require main
+//= require masonry.min
+//= require respond.min
+//= require wow.min
 //= require_tree .
 
 var blocmetrics = {};
