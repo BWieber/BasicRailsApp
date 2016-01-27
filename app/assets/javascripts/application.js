@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap.min.js
-//= require gmaps.js
 //= require holder.js
 //= require coundown-timer.js
 //= require html5shiv.js
