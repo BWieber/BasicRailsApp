@@ -138,7 +138,7 @@ RSpec.describe TopicsController, type: :controller do
     describe "GET edit" do
       it "returns http status success" do
         get :edit, {id: my_topic.id}
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:found)
       end
     end
 
