@@ -3,7 +3,7 @@ include RandomData
 include SessionsHelper
 
 RSpec.describe TopicsController, type: :controller do
-  let (:my_topic) { create(:topic) }
+  let (:my_topic) { create(:topic, public: true) }
   let (:my_private_topic) { create(:topic, public: false) }
 
   context "guest" do
@@ -30,7 +30,7 @@ RSpec.describe TopicsController, type: :controller do
         get :show, {id: my_private_topic.id}
         expect(response).to redirect_to(new_session_path)
       end
-      
+
       it "returns http success" do
         get :show, {id: my_topic.id}
         expect(response).to have_http_status(:success)
@@ -122,23 +122,23 @@ RSpec.describe TopicsController, type: :controller do
     end
 
     describe "GET new" do
-      it "returns http redirect" do
+      it "returns http status success" do
         get :new
-        expect(response).to redirect_to(topics_path)
+        expect(response).to have_http_status(:success)
       end
     end
 
     describe "POST create" do
       it "returns http redirect" do
         post :create, topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph}
-        expect(response).to redirect_to(topics_path)
+        expect(response).to redirect_to(Topic.last)
       end
     end
 
     describe "GET edit" do
-      it "returns http redirect" do
+      it "returns http status success" do
         get :edit, {id: my_topic.id}
-        expect(response).to redirect_to(topics_path)
+        expect(response).to have_http_status(:success)
       end
     end
 
@@ -148,7 +148,7 @@ RSpec.describe TopicsController, type: :controller do
         new_description = RandomData.random_paragraph
 
         put :update, id: my_topic.id, topic: {name: new_name, description: new_description}
-        expect(response).to redirect_to(topics_path)
+        expect(response).to redirect_to(my_topic)
       end
     end
 
