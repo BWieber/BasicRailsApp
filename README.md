@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-## Bloccit: A Reddit Replica to Showcase the Fundamentals of Web Development and Ruby on Rails.
-
-The live version can be found at (bwieber-bloccit.herokuapp.com).
-
-The following fundamentals of Ruby on Rails were utilized in this project:
-
-- Object relational mapping
-- The importance of testing
-- Seeding data
-- The MVC architecture
-- CRUD
-- Validating data
-- Creating users & signing them in and out
-- Ajax
-- Privacy options
-- API basics (sending and retrieving data)
-
-Made during my apprenticeship at Bloc
-=======
 https://travis-ci.org/BWieber/BasicRailsApp.svg?branch=master
 
 # Bloccit
@@ -61,4 +41,3 @@ This app was created as part of the [Bloc](www.bloc.io) Full Stack Web Developme
 + Users can create a standard account in order to create and edit topics and posts.
 + Users can up/down vote any post. A list of their posts is displayed on their profile with their vote score.
 + Users can favorite posts, which are then saved on their user profile for easy tracking.
->>>>>>> topics_fix
