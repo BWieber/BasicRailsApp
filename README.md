@@ -1,4 +1,4 @@
-![]https://travis-ci.org/BWieber/BasicRailsApp.svg?branch=master
+![](https://travis-ci.org/BWieber/BasicRailsApp.svg?branch=master)
 
 # Bloccit
 
