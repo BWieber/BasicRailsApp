@@ -11,7 +11,14 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require animate.min.css
+ *= require bootstrap.min.css
+ *= require font-awesome.min.css
+ *= require lightbox.css
+ *= require responsive.css
+ *= require prettyPhoto.css
  *= require_self
+
  */
 
 @import "bootstrap-sprockets";
@@ -25,11 +32,14 @@
   margin-top: 5px;
 }
 
+<<<<<<< HEAD
 .medium-btn {
     width: 70px;
     height: 30px;
 }
 
+=======
+>>>>>>> topics_fix
 hr {
     display: block;
     margin-top: 0.5em;

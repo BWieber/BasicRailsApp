@@ -5,8 +5,8 @@
       <p> Guidlines for topics: </p>
       <ul>
         <li> Make sure the topic is appropriate. </li>
-        <li> Never insult dogs. </li>
-        <li> Smile wen you type. </li>
+        <li> Check to make sure your topic does not yet exist. </li>
+        <li> Smile when you type. </li>
       </ul>
     </div>
     <div class="col-md-8">
@@ -35,3 +35,7 @@
       <% end %>
     </div>
 </div>
+
+<% content_for :analytic do %>
+  <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_topics_new"); }); </script>
+<% end %>

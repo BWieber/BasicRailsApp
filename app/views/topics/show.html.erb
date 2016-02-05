@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1><%= @topic.name %>
     <%= render partial: "labels/list", locals: { labels: @topic.labels } %>
 </h1>
@@ -6,31 +7,89 @@
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
   <%= link_to "Delete Topic", @topic, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this topic?' } %>
 <% end %>
+=======
+  <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Topic View</h1>
+                            <p>Remember to Respect and Respond!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <!--/#action-->
+>>>>>>> topics_fix
 
-<div class="row">
-  <div class="col-md-8">
+    <section id="blog" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-5">
+                    <div class="sidebar blog-sidebar">
+                        <div class="sidebar-item  recent">
+                            <h2>Posts <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-warning' %> </h2>
+                            <hr>
+                            <div class="media">
+                                <div class="media-body">
+                                  <% @topic.posts.each do |post| %>
+                                    <h4> <%= link_to post.title, topic_post_path(@topic, post) %> </h4>
+                                    <p>posted on <%= post.created_at %></p>
+                                    <hr>
+                                  <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog two-column">
+                                <div class="post-thumb">
+                                    <div class="post-overlay">
+                                    </div>
+                                </div>
+                                <div class="post-content overflow">
+                                    <h2 class="post-title bold"> <%= link_to @topic.name, @topic %>
+                                      <% if user_is_authorized_for_topics?(@topic) %>
+                                        <%= link_to "Edit Topic", edit_topic_path(@topic), class: 'btn btn-success' %>
+                                        <%= link_to "Delete Topic", @topic, method: :delete , class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this post?'} %>
+                                      <% end %>
+                                    </div>
+                                    </h2>
+                                    <h3 class="post-author"> Started by <%= @topic.user.name %></h3>
+                                    <p> <%= @topic.description %> <p>
 
+<<<<<<< HEAD
   <p class="lead">
 
     <br />
     <%= @topic.description %>
   </p>
+=======
+                                    <div class="post-bottom overflow">
+                                      <ul class="nav navbar-nav post-nav">
+                                        <%= render partial: "labels/list", locals: { labels: @topic.labels } %>
+                                      </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+>>>>>>> topics_fix
 
-    <% @topic.posts.each do |post| %>
-      <div class="media">
-        <%= render partial: 'votes/voter', locals: { post: post } %>
-        <div class="media-body">
-          <h4 class="media-heading">
-            <%= link_to post.title, topic_post_path(@topic, post) %>
-            <%= render partial: "labels/list", locals: { labels: post.labels } %>
-          </h4>
-          <small>
-            submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %> <br>
-            <%= post.comments.count %> Comments
-          </small>
+                 </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <% content_for :analytic do %>
+      <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_topic_show_page"); }); </script>
     <% end %>
+<<<<<<< HEAD
     <br>
     
   <% if current_user %>
@@ -39,3 +98,5 @@
     </div>
   <% end %>
 </div>
+=======
+>>>>>>> topics_fix

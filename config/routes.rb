@@ -15,13 +15,13 @@ Rails.application.routes.draw do
 
   end
 
-
-
   resources :users, only: [:new, :create, :show]
 
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'about' => 'welcome#about'
+
+  get 'brandon' => 'welcome#brandon'
 
   root to: 'welcome#index'
 

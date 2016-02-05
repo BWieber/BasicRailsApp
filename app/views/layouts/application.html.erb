@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Bloccit</title>
   <meta name= "viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="images/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
 </head>
+
 <body>
   <div class="container">
     <ul class="nav nav-tabs">
-      <li> <%= link_to "Bloccit", root_path %> </li>
-      <li> <%= link_to "Topics", topics_path %> </li>
-      <li> <%= link_to "About", about_path %> </li>
-
       <div class="pull-right user-info">
         <% if current_user %>
           <%= image_tag User.avatar_url(current_user, 48), class: "gravatar" %>
@@ -26,6 +35,64 @@
       <% end %>
       </div>
   </ul>
+
+  	<header id="header">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-12 overflow">
+                     <div class="social-icons pull-right">
+                          <ul class="nav nav-pills">
+                              <li><a href="facebook.com/brandon.m.wieber"><i class="fa fa-facebook"></i></a></li>
+                              <li><a href="https://twitter.com/b_wieber"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="mailto:brandon.m.wieber@gmail.com"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="https://www.linkedin.com/in/brandon-wieber-3574b454"><i class="fa fa-linkedin"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+               </div>
+          </div>
+          <div class="navbar navbar-inverse" role="banner">
+              <div class="container">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+
+                      <a class="navbar-brand" href="/">
+                      	<h1> Bloccit </h1>
+                      </a>
+
+                  </div>
+                  <div class="collapse navbar-collapse">
+                      <ul class="nav navbar-nav navbar-right">
+                          <li class="active"><%= link_to "Home", root_path %></li>
+                          <li class="dropdown"><a href="#"> Topics <i class="fa fa-angle-down"></i></a>
+                              <ul role="menu" class="sub-menu">
+                                  <li> <%= link_to "Index", topics_path %> </li>
+                              </ul>
+                          </li>
+                          <li class="dropdown"><a href="blog.html"> About <i class="fa fa-angle-down"></i></a>
+                              <ul role="menu" class="sub-menu">
+                                  <li><%= link_to "Brandon, The Author", brandon_path %></li>
+                                  <li><%= link_to "Bloccit, The App", about_path %></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="search">
+                      <form role>
+                          <i class="fa fa-search"></i>
+                          <div class="field-toggle">
+                              <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </header>
 
   <div class="flash">
     <% if flash[:notice] %>
@@ -50,6 +117,65 @@
 
     <%= yield %>
     </div>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                  <%= image_tag('under.png') %>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial bottom">
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>Contacts</h2>
+                        <address>
+                        E-mail: <a href="mailto:brandon.m.wieber@gmail.com">brandon.m.wieber@gmail.com</a> <br>
+                        Phone: +1 (978) 979-3380 <br>
+                        </address>
+
+                        <h2>Address</h2>
+                        <address>
+                        554 Blue Hill Avenue <br>
+                        Milton, MA 02186 <br>
+                        United States <br>
+                        (Just south of Boston!)
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="contact-form bottom">
+                        <h2>Send a message</h2>
+                        <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        <p>&copy; Brandon Wieber 2016. All Rights Reserved.</p>
+                        <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<%= yield :analytic %>
 
 </body>
 </html>

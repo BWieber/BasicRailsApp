@@ -12,6 +12,31 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.countTo
+//= require jquery.fitvids
+//= require jquery.isotope.min
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap.min
+//= require holder
+//= require coundown-timer
+//= require html5shiv
+//= require lightbox.min
+//= require main
+//= require masonry.min
+//= require respond.min
+//= require wow.min
 //= require_tree .
+
+var blocmetrics = {};
+  blocmetrics.report = function(eventName) {
+    var event = {event: { name: eventName}};
+
+    var request = new XMLHttpRequest();
+
+    request.open("POST", "http://bwieber-blocmetrics.herokuapp.com/api/events", true);
+
+    request.setRequestHeader('Content-Type', 'application/json');
+
+    request.send(JSON.stringify(event));
+
+ }

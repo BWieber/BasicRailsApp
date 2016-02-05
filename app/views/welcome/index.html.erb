@@ -1,25 +1,79 @@
-<br>
-<div class="jumbotron">
-  <h1> Bloccit </h1>
-  <p> Bloccit is a resource for sharing links with your friends! </p>
-  <p>
-    <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %> today!
-  </p>
-</div>
+    <section id="home-slider">
+        <div class="container">
+            <div class="row">
+                <div class="main-slider">
+                    <div class="slide-text">
+                        <h1>Talk About What You Love</h1>
+                        <p> Bloccit is an interactive social environment for you to create topics and posts about what matters to you. Be it the Knights of Westeros or Ruth Bader Ginsburg, you'll find a home here.</p>
+                        <%= link_to "SIGN UP", new_user_path, class: "btn btn-common" %>
+                    </div>
+                    <%= image_tag('hill.png', :alt=> "slider-image", :class=>"slider-hill") %>
+                    <%= image_tag('house.png', :alt=> "slider-image", :class=>"slider-house") %>
+                    <%= image_tag('sun.png', :alt=> "slider-image", :class=>"slider-sun") %>
+                    <%= image_tag('birds1.png', :alt=> "slider-image", :class=>"slider-birds1") %>
+                    <%= image_tag('birds2.png', :alt=> "slider-image", :class=>"slider-birds2") %>
+                </div>
+            </div>
+        </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    </section>
+    <!--/#home-slider-->
 
-<div class="row">
-  <div class="col-md-4">
-    <h2> Solves world hunger </h2>
-    <p> Bloccit will deliver food and water to those in need, all over the world. </p>
-  </div>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <img src="images/home/Checklist.svg" alt="">
+                        </div>
+                        <h2>Express Yourself</h2>
+                        <p>As a user of Bloccit there is no limit to how many topics and posts you can write. You can add a post to any topic, comment on any post and even create your own topics to share with Bloccit's userbase.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
+                            <img src="images/home/Medal-2.svg" alt="">
+                        </div>
+                        <h2>Cast Your Vote</h2>
+                        <p>Bloccit can quickly get overrun with a variety of posts but never fear: the most popular posts will rise to the top and ride the rocket of their popularity. Those destined for the down vote will be buried low in the depths of Bloccit's database.</p>
 
-  <div class="col-md-4">
-    <h2>Eliminates poverty</h2>
-    <p>Bloccit will deliver money and education to those in need, all over the world.</p>
-  </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
+                            <img src="images/home/Love-Letter.svg" alt="">
+                        </div>
+                        <h2>Mark Your Favorites</h2>
+                        <p> At Bloccit you can find the posts you love and make sure you never lose track of them. No matter how many posts you love, they'll all be saved in your user profile for easy perusing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#services-->
 
-  <div class="col-md-4">
-    <h2> Makes you better looking </h2>
-    <p> Bloccit will make you better looking: it's scientifically proven to make men look like Ryan Gosling and women look like Shakira. </p>
-  </div>
-</div>
+    <section id="action" class="responsive">
+        <div class="vertical-center">
+             <div class="container">
+                <div class="row">
+                    <div class="action take-tour">
+                        <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <h1 class="title">Brandon Wieber - Web Developer</h1>
+                            <p>Trained at <a href="bloc.io">Bloc</a> and ready to fill your code base with testable, sustainable solutions.</p>
+                        </div>
+                        <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <div class="tour-button">
+                                <a href="http://bwieber.github.io/portfolio/" class="btn btn-common">Tour my Portfolio</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+
+   <% content_for :analytic do %>
+    <script type="text/javascript"> $(document).ready(function(){ blocmetrics.report("Visited_home_page"); }); </script>
+   <% end %>
